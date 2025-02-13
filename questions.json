@@ -1,0 +1,44 @@
+[
+    {
+        "type": "mc",
+        "label": "What is up for my favorite dude",
+        "questions": [
+            {
+                "text": "What's up dawg"
+            },
+            {
+                "text": "Click me to go to the console",
+                "effect": "goConsole()"
+            }
+        ]
+    },
+    {
+        "type": "mc",
+        "label": "What is up for my favorite multiple set of things",
+        "questions": [
+            {
+                "text": "Notice how this is another set"
+            },
+            {
+                "text": "It's kinda pog",
+                "effect": "goConsole()"
+            },
+            {
+                "text": "am i the goat or what"
+            }
+        ]
+    },
+    {
+        "type": "range",
+        "label": "how was your day on a scale of -pi to pi",
+        "min": -3.141,
+        "max": 3.141,
+        "steps": 8,
+        "step_effects": {
+            "2": {
+                "effect": "goConsole()",
+                "label": "Quentilionaire"
+            }
+        }
+    }
+]
