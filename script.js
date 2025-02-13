@@ -37,11 +37,10 @@ function loadRange(json) {
     const steps = json.steps - 1;
 
     const body = document.getElementById("body");
-    body.innerHTML = "";
 
 
     for (let i = 0, scale = maxScale; i < steps + 1; i++) {
-        const specialEffects = json.step_effects[i+""];
+        const specialEffects = json.step_effects[i + ""];
         const label = specialEffects ? specialEffects.label : "";
         const effect = specialEffects ? specialEffects.effect : "";
 
@@ -50,8 +49,8 @@ function loadRange(json) {
         const deltaScale = (maxScale - minScale) / (steps);
 
         const val = deltaVal + minVal;
-        const valRounded = Math.round(val * 100) / 100; 
-        
+        const valRounded = Math.round(val * 100) / 100;
+
         const format = `<div class="range-row" onclick="goNext(${effect})">
                             <div class="balls" 
                                 style="transform: scale(${scale}); 
@@ -71,11 +70,19 @@ function loadRange(json) {
     }
 }
 
-function goNext() { goNext(null); }
-function goNext(effect) {
+async function goNext() { goNext(null); }
+async function goNext(effect) {
     if (effect) eval(effect); // run the fun
-    
-    // TODO: add process animation
+
+    const body = document.getElementById("body");
+    body.innerHTML = ""; // clear
+
+    // white out
+    body.classList.add("white");
+    await new Promise(r => setTimeout(r, 400));
+    body.classList.remove("white")
+    await new Promise(r => setTimeout(r, 400));
+
 
     const nextQ = questions.pop();
     document.getElementById("q-label").innerText = nextQ.label;
