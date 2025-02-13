@@ -78,6 +78,7 @@ function goNext(effect) {
     // TODO: add process animation
 
     const nextQ = questions.pop();
+    document.getElementById("q-label").innerText = nextQ.label;
     switch (nextQ.type) {
         case "mc":
             loadMultipleChoice(nextQ);
