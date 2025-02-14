@@ -13,7 +13,8 @@ function loadMultipleChoice(json) {
     const body = document.getElementById("body");
     body.innerHTML = "";
 
-    json.questions.forEach((question) => {
+    for (let i = 0; i < json.questions.length; i++) {
+        const question = json.questions[i];
         const effect = question.effect;
         const text = question.text;
 
@@ -23,10 +24,10 @@ function loadMultipleChoice(json) {
 
         body.innerHTML += format;
 
-    });
+    };
 }
 
-function loadRange(json) {
+async function loadRange(json) {
     const minScale = 0.6;
     const maxScale = 1;
     const minHue = 0;
@@ -40,7 +41,8 @@ function loadRange(json) {
 
 
     for (let i = 0, scale = maxScale; i < steps + 1; i++) {
-        const specialEffects = json.step_effects[i + ""];
+        await new Promise(r => setTimeout(r, 20));
+        const specialEffects = json.step_effects[steps - i];
         const label = specialEffects ? specialEffects.label : "";
         const effect = specialEffects ? specialEffects.effect : "";
 
@@ -48,7 +50,7 @@ function loadRange(json) {
         const deltaHue = (maxHue - minHue) / steps * i;
         const deltaScale = (maxScale - minScale) / (steps);
 
-        const val = deltaVal + minVal;
+        const val = maxVal - deltaVal;
         const valRounded = Math.round(val * 100) / 100;
 
         const format = `<div class="range-row" onclick="goNext(${effect})">
@@ -72,20 +74,25 @@ function loadRange(json) {
 
 async function goNext() { goNext(null); }
 async function goNext(effect) {
-    if (effect) eval(effect); // run the fun
-
+    console.log(effect);
     const body = document.getElementById("body");
     body.innerHTML = ""; // clear
 
     // white out
     body.classList.add("white");
-    await new Promise(r => setTimeout(r, 400));
+    await new Promise(r => setTimeout(r, 300));
     body.classList.remove("white")
-    await new Promise(r => setTimeout(r, 400));
 
+    if (effect) {
+        await effect.apply(this);
+    }
 
+    await new Promise(r => setTimeout(r, 200));
     const nextQ = questions.pop();
     document.getElementById("q-label").innerText = nextQ.label;
+    await new Promise(r => setTimeout(r, 100));
+
+    
     switch (nextQ.type) {
         case "mc":
             loadMultipleChoice(nextQ);

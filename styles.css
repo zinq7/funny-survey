@@ -57,11 +57,22 @@ body {
     align-items: center;
     padding: 0;
     height: 80%;
-    transition: background-color 0.4s ease-in;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    background-color: color(--pico-background-color);
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 0.5 !important;
+}
+#body:hover {
+    height: 150%;
 }
 
 .white {
-    background-color: black;
+    background-color: black !important;
 }
 
 .question {
@@ -103,7 +114,7 @@ body {
 
 .range-row:hover {
     background-color: rgb(85, 94, 114);
-    border: 4px solid rgb(36, 40, 49);
+    border: 2px solid rgb(36, 40, 49);
 }
 
 .range-num {
@@ -122,4 +133,14 @@ body {
     background-color: #04b68b;
     width: 80%;
     padding-bottom: 80%;
+}
+
+.centered-text {
+    text-align: center;
+    font-size: 6vw;
+}
+
+.start-button {
+    border-radius: 500px;
+    font-size: 10vw;
 }

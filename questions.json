@@ -1,44 +1,115 @@
 [
     {
-        "type": "mc",
-        "label": "What is up for my favorite dude",
-        "questions": [
-            {
-                "text": "What's up dawg"
-            },
-            {
-                "text": "Click me to go to the console",
-                "effect": "goConsole()"
-            }
-        ]
-    },
-    {
-        "type": "mc",
-        "label": "What is up for my favorite multiple set of things",
-        "questions": [
-            {
-                "text": "Notice how this is another set"
-            },
-            {
-                "text": "It's kinda pog",
-                "effect": "goConsole()"
-            },
-            {
-                "text": "am i the goat or what"
-            }
-        ]
-    },
-    {
         "type": "range",
-        "label": "how was your day on a scale of -pi to pi",
+        "label": "first: how was your *so far* day (-pi to pi)",
         "min": -3.141,
         "max": 3.141,
         "steps": 8,
         "step_effects": {
-            "2": {
-                "effect": "goConsole()",
-                "label": "Quentilionaire"
+            "0": {
+                "effect": "goConsole",
+                "label": "Shite :("
+            },
+            "3": {
+                "effect": "flushed",
+                "label": "😳"
+            },
+            "4": {
+                "effect": "flushed",
+                "label": "😳😳😳"
+            },
+            "7": {
+                "label": "Fantastic !!"
             }
         }
+    },
+    {
+        "type": "range",
+        "label": "How content are you with your boyfriends pool ability?",
+        "min": 1000,
+        "max": 1005,
+        "steps": 6,
+        "step_effects": {
+            "0": {
+                "label": "Bald and Bad"
+            },
+            "5": {
+                "label": "He IS the eight ball"
+            }
+        }
+    },
+    {
+        "type": "range",
+        "label": "How content are you with my productivity, as your employee?",
+        "min": 1,
+        "max": 5,
+        "steps": 5,
+        "step_effects": {
+            "0": {
+                "label": "ayo is this guy even working"
+            },
+            "4": {
+                "label": "deserves a raise"
+            }
+        }
+    },
+    {
+        "type": "mc",
+        "label": "wup girl",
+        "questions": [
+            {
+                "text": "wup girl",
+                "effect": "huh"
+            },
+            {
+                "text": "wup girlfriend",
+                "effect": "huh"
+            },
+            {
+                "text": "wup boy",
+                "effect": "huh"
+            },
+            {
+                "text": "wup poo",
+                "effect": "huh"
+            }
+        ]
+    },
+    {
+        "type": "mc",
+        "label": "How content is your boyfriend with you?",
+        "questions": [
+            {
+                "text": "15/10, you're the goat"
+            },
+            {
+                "text": "incredibly, you're my favorite part of literally everyday"
+            },
+            {
+                "text": "the most, you're my #1"
+            },
+            {
+                "text": "more than I am able to effectively express in words"
+            },
+            {
+                "text": "trick question it's all of the above.",
+                "effect": "yippee"
+            }
+        ]
+    },
+    {
+        "type": "mc",
+        "label": "Ayo what the _____ ?",
+        "questions": [
+            {
+                "text": "balls",
+                "effect": "balls"
+            },
+            {
+                "text": "freak",
+                "effect": "freak"
+            }
+        ]
     }
+    
 ]
