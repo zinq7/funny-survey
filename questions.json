@@ -1,7 +1,7 @@
 [
     {
         "type": "range",
-        "label": "first: how was your *so far* day (-pi to pi)",
+        "label": "First: how was your *so far* day (-pi to pi)",
         "min": -3.141,
         "max": 3.141,
         "steps": 8,
@@ -40,6 +40,21 @@
     },
     {
         "type": "range",
+        "label": "How content are you with your hunger level",
+        "min": 1,
+        "max": 5,
+        "steps": 5,
+        "step_effects": {
+            "0": {
+                "label": "huntry enough to heat a hearse"
+            },
+            "4": {
+                "label": "as hungry as 0 suns"
+            }
+        }
+    },
+    {
+        "type": "range",
         "label": "How content are you with my productivity, as your employee?",
         "min": 1,
         "max": 5,
@@ -50,6 +65,21 @@
             },
             "4": {
                 "label": "deserves a raise"
+            }
+        }
+    },
+    {
+        "type": "range",
+        "label": "How's life ?",
+        "min": 1,
+        "max": 5,
+        "steps": 5,
+        "step_effects": {
+            "0": {
+                "label": "im living"
+            },
+            "4": {
+                "label": "im living the dream"
             }
         }
     },
@@ -119,9 +149,57 @@
         "steps": 5,
         "step_effects": {
             "1": {
-                "effect": "flushed"
+                "effect": "flushed",
+                "label": ""
             }
         }
+    },
+    {
+        "type": "mc",
+        "label": "Pick one",
+        "questions": [
+            {
+                "text": "honk mimimimi"
+            },
+            {
+                "text": "honk shoe"
+            },
+            {
+                "text": "z z z z z z z"
+            },
+            {
+                "text": "*vigorous twitching*"
+            }
+        ]
+    },
+    {
+        "type": "mc",
+        "label": "Pick another",
+        "questions": [
+            {
+                "text": "mwah"
+            },
+            {
+                "text": "peck"
+            },
+            {
+                "text": ":3"
+            },
+            {
+                "text": "<3"
+            },
+            {
+                "text": "*vigorous sucking*"
+            }
+        ]
+    },
+    {
+        "type": "range",
+        "label": "How uh, number are you ?",
+        "min": 0,
+        "max": 28,
+        "steps": 15,
+        "step_effects": {}
     }
     
 ]

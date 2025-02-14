@@ -89,25 +89,30 @@ async function goNext(effect) {
         } catch (ex) {
             console.error(ex); // idc
         }
-        
+
     }
 
     await new Promise(r => setTimeout(r, 200));
     const nextQ = questions.pop();
-    document.getElementById("q-label").innerText = nextQ.label;
-    await new Promise(r => setTimeout(r, 100));
+    if (nextQ) {
+        document.getElementById("q-label").innerText = nextQ.label;
+        await new Promise(r => setTimeout(r, 100));
 
-    
-    switch (nextQ.type) {
-        case "mc":
-            loadMultipleChoice(nextQ);
-            break;
-        case "range":
-            loadRange(nextQ);
-            break;
-        default:
-            console.error("unknown type eeee");
+
+        switch (nextQ.type) {
+            case "mc":
+                loadMultipleChoice(nextQ);
+                break;
+            case "range":
+                loadRange(nextQ);
+                break;
+            default:
+                console.error("unknown type eeee");
+        }
+    } else {
+        window.location = window.location.toString().split("/").slice(0, -1).join("/") + "/windex.html" 
     }
+
 }
 
 addEventListener("DOMContentLoaded", (win, ev) => {
