@@ -21,3 +21,11 @@ function huh() {
 async function sleep(time) {
     return new Promise(r => setTimeout(r, time));
 }
+
+function balls() {
+
+}
+
+function freak() {
+    
+}

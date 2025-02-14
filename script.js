@@ -84,7 +84,12 @@ async function goNext(effect) {
     body.classList.remove("white")
 
     if (effect) {
-        await effect.apply(this);
+        try {
+            await effect.apply(this);
+        } catch (ex) {
+            console.error(ex); // idc
+        }
+        
     }
 
     await new Promise(r => setTimeout(r, 200));

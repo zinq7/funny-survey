@@ -110,6 +110,18 @@
                 "effect": "freak"
             }
         ]
+    },
+    {
+        "type": "range",
+        "label": "pick a random number to prove that ur paying attention :)",
+        "min": 1,
+        "max": 5,
+        "steps": 5,
+        "step_effects": {
+            "1": {
+                "effect": "flushed"
+            }
+        }
     }
     
 ]
